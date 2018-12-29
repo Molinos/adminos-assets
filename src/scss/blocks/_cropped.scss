@@ -1,0 +1,38 @@
+.img-container {
+  margin-bottom: 1rem;
+  max-height: 497px;
+  min-height: 200px;
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    min-height: 497px;
+  }
+}
+
+.img-container>img {
+  max-width: 100%;
+}
+
+.docs-preview {
+  margin-right: -1rem;
+}
+
+.img-preview {
+  float: left;
+  margin-bottom: .5rem;
+  margin-right: .5rem;
+  overflow: hidden;
+}
+
+.img-preview img,
+.preview-cropped img {
+  max-width: 100%;
+}
+
+.preview-lg {
+  height: 16rem;
+  width: 23rem;
+  /* min-width: 100%; */
+
+}

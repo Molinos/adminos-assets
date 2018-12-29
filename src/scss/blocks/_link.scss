@@ -1,0 +1,28 @@
+.link {
+  position: relative;
+  display: block;
+  padding-left: 24px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: -9px;
+    content: "";
+  }
+
+  &--home::before {
+    @include svg("octicons/home-white");
+  }
+
+  &--settings::before {
+    @include svg("octicons/gear-white");
+  }
+
+  &--info::before {
+    @include svg("octicons/question-white");
+  }
+}

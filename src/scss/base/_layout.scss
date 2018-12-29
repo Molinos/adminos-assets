@@ -1,0 +1,42 @@
+html, body {
+  min-width: $min-width;
+  height: 100%;
+}
+
+.page-container {
+  position: relative;
+  width: 100%;
+  min-width: $min-width;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0 0 0 240px;
+  overflow-x: hidden;
+
+  @include max-width("1239px") {
+    padding-left: 0;
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: auto;
+  max-width: $wrapper-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  padding: 40px 0 60px;
+  transition: transform 0.3s;
+
+  @include max-width("1239px") {
+    padding-bottom: 40px;
+
+    .sidebar-opened & {
+      transform: translateX(240px);
+    }
+  }
+  .topbar + & {
+    padding-top: 96px;
+  }
+}

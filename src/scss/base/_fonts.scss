@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "Lato";
+  src: url("#{$font-path}/latoregular.woff2") format("woff2"),
+  url("#{$font-path}/latoregular.woff") format("woff"),
+  url("#{$font-path}/latoregular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("#{$font-path}/latoitalic.woff2") format("woff2"),
+  url("#{$font-path}/latoitalic.woff") format("woff"),
+  url("#{$font-path}/latoitalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("#{$font-path}/latolight.woff2") format("woff2"),
+  url("#{$font-path}/latolight.woff") format("woff"),
+  url("#{$font-path}/latolight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("#{$font-path}/latomedium.woff2") format("woff2"),
+  url("#{$font-path}/latomedium.woff") format("woff"),
+  url("#{$font-path}/latomedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("#{$font-path}/latobold.woff2") format("woff2"),
+  url("#{$font-path}/latobold.woff") format("woff"),
+  url("#{$font-path}/latobold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/fonts/ubuntu/ubuntu.woff2") format("woff2"),
+       url("/fonts/ubuntu/ubuntu.woff") format("woff"),
+       url("/fonts/ubuntu/ubuntu.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Myriad";
+  src: url("/fonts/myriad/myriadproregular.woff") format("woff"),
+       url("/fonts/myriad/myriadproregular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+*/

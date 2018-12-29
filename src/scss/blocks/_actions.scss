@@ -1,0 +1,47 @@
+.actions {
+  color: #3f484f;
+
+  a {
+    color: inherit;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1px;
+
+    &--add {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 56px;
+    transition: background-color 0.3s;
+
+    &--add {
+      padding-left: 44px;
+      @include svg("add");
+      background-position: 20px 50%;
+    }
+
+    &--back {
+      margin-left: -20px;
+      padding-left: 44px;
+      @include svg("ionicons/android-arrow-back");
+      background-position: 18px 50%;
+      background-size: 20px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.025);
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}

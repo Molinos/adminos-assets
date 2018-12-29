@@ -1,0 +1,43 @@
+.topbar {
+  position: fixed;
+  z-index: 1000;
+  left: 240px;
+  right: 0;
+  top: 0;
+  min-width: $min-width;
+  height: 56px;
+  //background-color: #eff4f7;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+
+  .mobile & {
+    position: absolute;
+  }
+
+  &__actions {
+    padding-right: 260px;
+  }
+
+  &__search {
+    position: absolute;
+    right: 20px;
+    top: 11px;
+  }
+
+  @include max-width("1239px") {
+    left: 0;
+
+    .sidebar-opened & {
+      transform: translateX(240px);
+    }
+  }
+
+  @include max-width("1091px") {
+    padding: 0 0 0 44px;
+
+    .wrapper {
+      max-width: none;
+    }
+  }
+}

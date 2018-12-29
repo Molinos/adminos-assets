@@ -1,0 +1,44 @@
+.pills {
+  margin: 0;
+
+  .nav-pills {
+    .nav-link {
+      padding: 0 1em;
+      font-size: 16px;
+      line-height: 30px;
+      &.active {
+        background-color: #3f484f;
+      }
+    }
+  }
+
+  &--group {
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    .nav-pills {
+      .nav-item {
+        margin: 0;
+        border-left: 1px solid #ddd;
+        &:first-child {
+          border: 0;
+        }
+      }
+      .nav-link {
+        padding: 0 1em;
+        color: #3f484f;
+        line-height: 28px;
+        border-radius: 0;
+        &:hover {
+          color: #3f484f;
+          background-color: #f3f3f3;
+        }
+        &.active {
+          color: #3f484f;
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}

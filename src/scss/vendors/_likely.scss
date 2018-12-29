@@ -1,0 +1,62 @@
+.likely {
+  &__widget {
+    display: inline-block;
+    width: 25%;
+    height: 36px;
+    background-color: $gray-color;
+    background-position: 50% 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  &__widget_vkontakte {
+    background-color: #4a90e2;
+    @include svg('vk-white');
+    &:hover {
+      background-color: lighten(#4a90e2, 10%);
+    }
+  }
+  &__widget_facebook {
+    background-color: #4460a0;
+    @include svg('facebook-white');
+    &:hover {
+      background-color: lighten(#4460a0, 10%);
+    }
+  }
+  &__widget_gplus {
+    background-color: #f93f2d;
+    @include svg('gplus-white');
+    &:hover {
+      background-color: lighten(#f93f2d, 10%);
+    }
+  }
+  &__widget_twitter {
+    background-color: #00aaec;
+    @include svg('twitter-white');
+    &:hover {
+      background-color: lighten(#00aaec, 10%);
+    }
+  }
+  &__icon,
+  &__button,
+  &__counter {
+    display: none;
+  }
+  //&_ready {}
+  //&_ready &__counter {}
+  //&_ready &__counter_empty {}
+}
+
+// Hide buttons until they are loaded
+.likely {
+  opacity: 0;
+}
+.likely_visible {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+.likely > * {
+  visibility: hidden;
+}
+.likely_visible > * {
+  visibility: inherit;
+}

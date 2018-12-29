@@ -1,0 +1,14 @@
+.message {
+  margin: 0 0 20px;
+  text-align: left;
+
+  .alert {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+
+    .close {
+      top: -4px;
+    }
+  }
+}

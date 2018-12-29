@@ -1,0 +1,73 @@
+.icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+  font-size: 0;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    background-position: 50% 50%;
+    background-size: 16px 16px;
+    content: "";
+  }
+
+  &--inactive {
+    opacity: 0.2;
+  }
+
+  &--move::before {
+    @include svg("ionicons/arrow-move");
+    //@include svg("ionicons/drag");
+    cursor: url('../../images/admin/grab.png') 8 8,
+      grab;
+
+    :active & {
+      cursor: url('../../images/admin/grabbing.png') 8 8,
+        grabbing;
+    }
+  }
+
+  &--edit::before {
+    @include svg("octicons/pencil");
+  }
+
+  &--info::before {
+    @include svg("octicons/info");
+  }
+
+  &--diff::before {
+    @include svg("octicons/diff");
+  }
+
+  &--nav::before {
+    @include svg("octicons/list-unordered");
+  }
+
+  &--published::before {
+    @include svg("octicons/eye");
+  }
+
+  &--copy::before {
+    @include svg("ionicons/ios-copy-outline");
+    background-size: 20px 20px;
+  }
+
+  &--photos::before {
+    @include svg("octicons/device-camera");
+    //@include svg("ionicons/image");
+  }
+
+  &--remove::before {
+    @include svg("octicons/x");
+    background-size: 12px 16px;
+  }
+}

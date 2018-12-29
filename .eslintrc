@@ -1,0 +1,15 @@
+{
+  'env': {
+    'es6': true,
+    'browser': true,
+    'jquery': true,
+  },
+  'extends': "airbnb",
+  'rules': {
+    'no-alert': 0,
+    'no-restricted-globals': 0,
+    'global-require': 0,
+    'func-names': 0,
+    'newline-before-return': 1,
+  }
+}

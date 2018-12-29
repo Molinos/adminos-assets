@@ -1,0 +1,16 @@
+.f-set {
+  margin: 0 0 -10px;
+  padding: 11px 0 0;
+  //text-align: left;
+  &__item {
+    margin: 0 0 4px;
+  }
+
+  &--inline {
+    .f-set__item {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 20px;
+    }
+  }
+}

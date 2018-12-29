@@ -1,0 +1,95 @@
+// Because Bootstrap
+// scss-lint:disable QualifyingElement
+.table-list {
+  .table {
+    margin: 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eceeef;
+
+    th {
+      font-size: 12px;
+    }
+
+    td {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+
+  .custom-select {
+    //width: 100%;
+  }
+
+  td.table-list__move {
+    width: 16px;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+
+  td.table-list__image {
+    width: 100px;
+    text-align: center;
+  }
+
+  td.table-list__controls {
+    width: 64px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    padding-left: 100px;
+    text-align: right;
+    white-space: nowrap;
+
+    .icon + .icon.icon--edit {
+      margin-left: 24px;
+    }
+  }
+
+  td.table-list__check {
+    width: 16px;
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+
+  &__details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+      padding: 0;
+      color: $text-light-color;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+  }
+
+  &__action {
+    padding: 0 0 0 0.3em;
+
+    .table + & {
+      padding-top: 8px;
+    }
+
+    .btn {
+      vertical-align: top;
+    }
+  }
+
+  &--centered {
+    .table {
+      td {
+        vertical-align: middle;
+      }
+    }
+
+    .f-check, .icon {
+      vertical-align: middle;
+    }
+
+    td.table-list__move, td.table-list__controls, td.table-list__check {
+      padding-top: 0;
+    }
+  }
+}
+// scss-lint:enable QualifyingElement

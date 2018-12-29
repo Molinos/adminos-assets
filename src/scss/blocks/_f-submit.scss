@@ -1,0 +1,37 @@
+.f-submit {
+  margin: 20px 0 0;
+  padding: 20px 220px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+
+  .wrapper {
+    padding: 0;
+  }
+
+  .btn {
+    margin-right: 10px;
+  }
+
+  @include min-width("1240px") {
+    &--fixed {
+      position: fixed;
+      z-index: 1000;
+      left: 240px;
+      right: 0;
+      bottom: 0;
+      min-width: $min-width;
+      height: 56px;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      border: 0;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+      .wrapper {
+        padding: 9px 20px 9px 240px;
+        //padding-left: 20px;
+        //text-align: right;
+      }
+    }
+  }
+}

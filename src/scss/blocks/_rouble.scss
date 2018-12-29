@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Rouble";
+  src: url("../fonts/rouble/rouble.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/rouble/rouble.woff") format("woff"),
+       url("../fonts/rouble/rouble.ttf")  format("truetype"),
+       url("../fonts/rouble/rouble.svg#rouble") format("svg");
+  font-weight: normal;
+}
+
+.rub {
+  font-family: "Rouble", $font-family;
+}

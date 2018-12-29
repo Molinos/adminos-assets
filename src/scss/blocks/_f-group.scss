@@ -1,0 +1,31 @@
+.f-group {
+  position: relative;
+  padding: 40px 0;
+  box-shadow: inset 0 0 0 1px #ddd;
+
+  &__label {
+    position: absolute;
+    z-index: 2;
+    left: 9px;
+    top: -11px;
+    height: 23px;
+    padding: 0 7px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #3f484f;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    //color: #31708f;
+    //background-color: #d9edf7;
+    //border: 1px solid #bcdff1;
+  }
+
+  .f-field:last-child {
+    margin-bottom: 0;
+  }
+
+  .f-field__label {
+    width: 180px;
+    margin-left: 20px;
+  }
+}

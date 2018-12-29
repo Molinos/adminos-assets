@@ -1,0 +1,131 @@
+.f-check {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0;
+  padding: 0;
+
+  input {
+    display: none;
+  }
+
+  &__box {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    transition: 0.3s;
+  }
+
+  &__label {
+    display: block;
+    margin: 0;
+    padding: 0 0 0 24px;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  input[type=checkbox] + &__box {
+    background-color: #fff;
+    background-position: 50% 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    &:hover {
+      border-color: #ccc;
+    }
+  }
+
+  input[type=checkbox]:checked + &__box {
+    background-color: #3f484f;
+    @include svg("octicons/check-white");
+    border-color: #3f484f;
+  }
+
+  input[type=radio] + &__box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    &:hover {
+      border-color: #ccc;
+    }
+  }
+
+  input[type=radio]:checked + &__box {
+    background-color: #3f484f;
+    border-color: #3f484f;
+
+    &::after {
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      display: block;
+      width: 6px;
+      height: 6px;
+      background-color: #fff;
+      border-radius: 3px;
+      content: "";
+    }
+  }
+}
+
+// simple_form check_boxes
+span.checkbox {
+  display: block;
+  margin: 0 0 16px;
+  padding: 0;
+
+  &:first-child, &:first-of-type {
+    margin-top: 10px;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0 0 0 24px;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: normal;
+    text-align: left;
+
+    &:before {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      transition: 0.3s;
+      content: "";
+    }
+  }
+
+  input + label:before {
+    background-color: #fff;
+    background-position: 50% 50%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    &:hover {
+      border-color: #ccc;
+    }
+  }
+
+  input:checked + label:before {
+    background-color: #3f484f;
+    @include svg("octicons/check-white");
+    border-color: #3f484f;
+  }
+}

@@ -1,0 +1,21 @@
+.search {
+  position: relative;
+  width: 240px;
+
+  .form-control {
+    padding: 6px 10px;
+  }
+
+  &::after {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    @include svg("octicons/search");
+    background-position: 50% 50%;
+    content: "";
+  }
+}

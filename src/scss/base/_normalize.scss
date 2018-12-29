@@ -1,0 +1,43 @@
+// Bootstrap normalize
+
+body {
+  color: $text-color;
+  font-family: $font-family;
+  background-color: $white-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  color: $heading-color;
+  font-family: $font-family;
+}
+
+a {
+  color: $link-color;
+
+  &:hover, &:active, &:focus {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a, button, input {
+  &:active, &:focus {
+    outline: 0;
+  }
+}
+
+abbr[title] {
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}

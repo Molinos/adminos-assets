@@ -1,0 +1,31 @@
+.user {
+  position: relative;
+  padding: 6px 16px;
+  font-size: 16px;
+  line-height: 1.2;
+
+  //&__name {}
+
+  &__role {
+    margin-top: 2px;
+    color: #a5b2bb;
+    font-size: 13px;
+  }
+
+  &__logout {
+    position: absolute;
+    right: 8px;
+    top: 2px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    @include svg("octicons/sign-out-white");
+    background-position: 50% 50%;
+    transition: opacity 0.3s;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

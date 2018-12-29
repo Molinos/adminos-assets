@@ -1,0 +1,49 @@
+.page {
+  background-color: #f9f9f9;
+
+  &--auth {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 500px;
+    padding: 20px;
+
+    &::before, &::after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: block;
+      content: "";
+    }
+
+    &::before {
+      @include image("bg/12.jpg");
+      background-position: 50% 50%;
+      background-size: cover;
+      transition: opacity 1s;
+      opacity: 0;
+    }
+
+    &::after {
+      background-color: #282c37;
+      transition: background-color 1s;
+    }
+
+    &.ready {
+      &::before {
+        opacity: 1;
+      }
+
+      &::after {
+        background-color: rgba(22, 34, 44, 0.8);
+      }
+    }
+  }
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,78 @@
+.nav {
+  //&__item {}
+
+  &__link {
+    display: block;
+    padding: 6px 16px;
+    font-size: 16px;
+    line-height: 1.2;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .active & {
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: inset 5px 0 0 -1px #e22775;
+    }
+  }
+
+  &__section {
+    margin: 0 0 10px;
+  }
+
+  &__group {
+    &-title {
+      position: relative;
+      padding: 4px 16px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      &::after {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        display: block;
+        width: 10px;
+        height: 6px;
+        margin-top: -3px;
+        @include svg("nav-arrow");
+        transition: transform 0.3s;
+        transform-origin: 50% 50%;
+        content: "";
+
+        .opened & {
+          transform: rotate(90deg);
+        }
+        .initial & {
+          transition: none;
+        }
+      }
+    }
+
+    &-content {
+      max-height: 0;
+      transition: max-height 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+      overflow: hidden;
+
+      .nav {
+        &__link {
+          padding-left: 32px;
+        }
+      }
+
+      .opened & {
+        max-height: 500px;
+        transition: max-height 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+      .initial & {
+        transition: none;
+      }
+    }
+  }
+}

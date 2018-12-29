@@ -1,0 +1,120 @@
+.sidebar {
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 240px;
+  color: $white-color;
+  background-color: #282c37;
+  transform: translateX(0);
+  transition: transform 0.3s;
+
+  a {
+    color: inherit;
+  }
+
+  &__wrapper {
+    &.optiscroll {
+      top: 56px;
+    }
+  }
+
+  &__header {
+    &-title {
+      position: fixed;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 240px;
+      height: 56px;
+      color: $white-color;
+      font-size: 24px;
+      line-height: 56px;
+      text-align: center;
+      background-color: #4c505b;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &-content {
+      margin-top: -150px;
+      padding: 0;
+      box-shadow: inset 0 -3px 0 -1px #3c3f4c;
+      //transition: margin 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: margin 0.5s;
+      overflow: hidden;
+
+      .nav {
+        margin: 20px 0 10px;
+      }
+
+      .user {
+        margin-bottom: 24px;
+      }
+    }
+
+    &:hover &-content {
+      // Trust me!
+      // scss-lint:disable ImportantRule
+      margin-top: 0 !important;
+      //transition: margin 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+
+  &__nav {
+    padding: 20px 0 10px;
+  }
+
+  &__footer {
+    padding: 20px 0;
+    border-top: 2px solid #3c3f4c;
+  }
+
+  &__toggle {
+    position: absolute;
+    z-index: 2;
+    left: 260px;
+    top: 19px;
+    display: none;
+    width: 24px;
+    height: 20px;
+    border-top: 4px solid #3f484f;
+    transition: transform 0.3s;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+
+    &::before, &::after {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 24px;
+      height: 4px;
+      background-color: #3f484f;
+      content: "";
+    }
+
+    &::before {
+      top: 4px;
+    }
+
+    &::after {
+      top: 12px;
+    }
+  }
+
+  @include max-width("1239px") {
+    transform: translateX(-240px);
+
+    &__toggle {
+      display: block;
+    }
+
+    .sidebar-opened & {
+      transform: translateX(0);
+
+      &__toggle {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

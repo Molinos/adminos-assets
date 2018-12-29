@@ -1,0 +1,26 @@
+.f-preview {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  &__delete {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(38, 189, 190, 0.8);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE2IiB3aWR0aD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTcuNDggOGwzLjc1IDMuNzUtMS40OCAxLjQ4LTMuNzUtMy43NS0zLjc1IDMuNzUtMS40OC0xLjQ4IDMuNzUtMy43NS0zLjc1LTMuNzUgMS40OC0xLjQ4IDMuNzUgMy43NSAzLjc1LTMuNzUgMS40OCAxLjQ4LTMuNzUgMy43NXoiLz48L3N2Zz4K);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(38, 189, 190, 0.9);
+    }
+  }
+  &:hover &__delete {
+    opacity: 1;
+  }
+}

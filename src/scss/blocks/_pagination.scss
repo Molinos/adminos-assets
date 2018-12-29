@@ -1,0 +1,79 @@
+.pagination {
+  display: flex;
+  margin: 10px 0;
+  overflow: hidden;
+
+  .page-link {
+    position: relative;
+    min-width: 30px;
+    height: 30px;
+    padding: 0 0.5em;
+    color: #3f484f;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+
+    &:before {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-position: 50% 50%;
+      content: "";
+    }
+
+    &--prev, &--next {
+      font-size: 0;
+    }
+
+    &--prev {
+      &:before {
+        @include svg("octicons/chevron-left");
+      }
+    }
+
+    &--next {
+      &:before {
+        @include svg("octicons/chevron-right");
+      }
+    }
+  }
+
+  a.page-link {
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+
+  .page-item {
+    &.active {
+      .page-link {
+        &, &:hover {
+          color: #3f484f;
+          background-color: #f3f3f3;
+          border-color: #ddd;
+        }
+      }
+    }
+
+    &.disabled {
+      .page-link {
+        &, &:hover {
+          color: #3f484f;
+          background-color: transparent;
+          border-color: #ddd;
+        }
+
+        &:before {
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+
+  .table-list + & {
+    float: left;
+  }
+}

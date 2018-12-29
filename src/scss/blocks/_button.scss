@@ -1,0 +1,36 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 180px;
+  padding: 12px 20px;
+  color: $white-color;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: center;
+  background-color: #27bdbe;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  appearance: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &--rounded {
+    border-radius: 100px;
+  }
+
+  &:hover {
+    background-color: darken(#27bdbe, 5%);
+  }
+
+  &:active {
+    background-color: darken(#27bdbe, 10%);
+  }
+
+  &.disabled, &:disabled {
+    //color: $text-color;
+    //background-color: $gray-color;
+    cursor: default;
+  }
+}

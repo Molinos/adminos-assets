@@ -1,0 +1,51 @@
+.uploader {
+  &__section {
+    margin: 0 0 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  &__label {
+    margin: 0 0 8px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  &__comment {
+    margin: 0 0 20px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  &__list {
+    margin: 0 -20px 2px 0;
+    font-size: 0;
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 294px;
+    margin: 0 18px 20px 0;
+    padding: 24px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    &.chosen {
+      box-shadow: 0 0 0 1px #ddd;
+    }
+  }
+  &__check {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+  }
+  &__delete {
+    float: right;
+    input {
+      padding: 4px 0;
+    }
+  }
+}
