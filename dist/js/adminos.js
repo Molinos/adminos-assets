@@ -213,6 +213,13 @@ $(function events() {
 });
 "use strict";
 
+var _railsUjs = _interopRequireDefault(require("rails-ujs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_railsUjs.default.start();
+"use strict";
+
 $(function sort() {
   $('.with-nested-sortable > ul').withNestedSortable();
   $('a.ajax-post').ajaxRequestLink();
