@@ -2386,9 +2386,10 @@ jquery-ui-touch-punch@^0.2.3:
   resolved "https://registry.yarnpkg.com/jquery-ui-touch-punch/-/jquery-ui-touch-punch-0.2.3.tgz#eed82242733ba243f46b3e87c1841b308191da68"
   integrity sha1-7tgiQnM7okP0az6HwYQbMIGR2mg=
 
-"jquery-ui@https://github.com/jquery/jquery-ui.git#v1.11.4":
-  version "1.11.4"
-  resolved "https://github.com/jquery/jquery-ui.git#d6713024e16de90ea71dc0544ba34e1df01b4d8a"
+jquery-ui@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
+  integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
 
 "jquery@>=1.7.1 <4.0.0", jquery@^3.3.1:
   version "3.3.1"

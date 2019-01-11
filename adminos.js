@@ -1,7 +1,7 @@
 import 'jquery';
 import 'jquery-autosize';
 
-import 'jquery-ui/ui/sortable';
+import 'jquery-ui/ui/widgets/sortable';
 import './dist/vendor/js/jquery_nested_sortable';
 import 'jquery-ui-touch-punch/jquery.ui.touch-punch.min';
 
