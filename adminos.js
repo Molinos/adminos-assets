@@ -6,7 +6,7 @@ import {} from 'jquery-ujs';
 import 'jquery-autosize';
 
 import 'jquery-ui/ui/widgets/sortable';
-import './dist/vendor/js/jquery_nested_sortable';
+import 'nestedSortable';
 import 'jquery-ui-touch-punch/jquery.ui.touch-punch.min';
 
 import 'spin/dist/spin.min';
