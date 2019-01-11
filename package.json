@@ -23,6 +23,7 @@
     "jquery-simplecolorpicker": "^0.3.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-touch-punch": "^0.2.3",
+    "optiscroll": "^3.2.1",
     "popper.js": "^1.14.6",
     "rails-ujs": "^5.2.2",
     "select2": "^4.0.6-rc.1",
