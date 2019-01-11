@@ -2998,6 +2998,11 @@ optionator@^0.8.2:
     type-check "~0.3.2"
     wordwrap "~1.0.0"
 
+optiscroll@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/optiscroll/-/optiscroll-3.2.1.tgz#cc24323ae4b65c03267093098af50cff791b6852"
+  integrity sha512-hNJ0bNGK/gjhwAPCCRnI7Nih17uj6HvbBqIzHvy+5Bum/y6xMM94WO30sSUTGWMzOVvodqpkgHwBu58XUyf9Tw==
+
 orchestrator@^0.3.0:
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/orchestrator/-/orchestrator-0.3.8.tgz#14e7e9e2764f7315fbac184e506c7aa6df94ad7e"
