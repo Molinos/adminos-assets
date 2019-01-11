@@ -363,7 +363,7 @@ $.fn.withNestedSortable = function (options) {
         prevId = undefined;
       }
 
-      data = {
+      var data = {
         _method: 'PUT',
         prevId: prevId,
         parentId: parentId
