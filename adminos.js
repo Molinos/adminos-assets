@@ -1,5 +1,7 @@
 import 'jquery';
 import 'jquery-autosize';
+import {} from 'jquery-ujs';
+
 
 import 'jquery-ui/ui/widgets/sortable';
 import './dist/vendor/js/jquery_nested_sortable';
