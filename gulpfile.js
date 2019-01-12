@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const scss = require('gulp-scss');
+const sass = require('gulp-sass');
 const minifyCSS = require('gulp-csso');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
@@ -7,8 +7,14 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const notify = require('gulp-notify');
 
+sass.compiler = require('node-sass');
+const tildeImporter = require('node-sass-tilde-importer');
+
 gulp.task('css', () => gulp.src('src/scss/adminos_base.scss')
-  .pipe(scss().on('error', notify.onError()))
+  .pipe(sass({
+    includePaths: ['./src/scss', "./node_modules"],
+    importer: tildeImporter
+  }).on('error', notify.onError()))
   .pipe(minifyCSS())
   .pipe(rename({
     basename: 'adminos',
