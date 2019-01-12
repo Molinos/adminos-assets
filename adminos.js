@@ -2,7 +2,9 @@ import 'jquery';
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
-import {} from 'jquery-ujs';
+import Rails from 'rails-ujs'
+Rails.start();
+
 import 'jquery-autosize';
 
 import 'jquery-ui/ui/widgets/sortable';
