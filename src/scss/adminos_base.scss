@@ -1,11 +1,12 @@
-@import '~select2/src/scss/core';
-@import '~cropperjs/src/css/cropper.scss';
-@import '~bootstrap-datepicker/dist/css/bootstrap-datepicker';
+@import "~select2/src/scss/core";
+@import "~cropperjs/src/css/cropper.scss";
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker";
 
 @import "helpers/vars";
 @import "helpers/mixins";
+@import "helpers/actiontext";
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 @import "~optiscroll/scss/optiscroll";
 
 @import "base/fonts";
@@ -66,7 +67,7 @@
 
 .kaya-input {
   &--code {
-    font-family: 'Monaco', monospace;
+    font-family: "Monaco", monospace;
   }
 }
 

@@ -19,8 +19,13 @@ import 'bootstrap-datepicker/dist/js/bootstrap-datepicker.min';
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min';
 import 'bootstrap/dist/js/bootstrap.min';
 
-import "optiscroll"
-import "optiscroll/dist/jquery.optiscroll.min"
+import 'optiscroll'
+import 'optiscroll/dist/jquery.optiscroll.min'
+
+import * as ActiveStorage from 'activestorage'
+ActiveStorage.start();
+
+import 'actiontext'
 
 if (process.env.NODE_ENV === 'production') {
   require('./dist/js/adminos.min');
