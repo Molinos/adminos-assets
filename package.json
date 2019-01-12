@@ -47,9 +47,11 @@
     "gulp-csso": "^3.0.1",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.4.0",
-    "gulp-scss": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "node-sass": "^4.11.0",
+    "node-sass-tilde-importer": "^1.0.2"
   },
   "peerDependencies": {
     "@rails/webpacker": "~3.5"
