@@ -14,6 +14,7 @@
   "keywords": [
     "adminos"
   ],
+  "main": "adminos.js",
   "dependencies": {
     "actiontext": "https://github.com/rails/actiontext#cfe4674d",
     "bootstrap": "^4.1.3",
