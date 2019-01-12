@@ -1,14 +1,12 @@
-@import 'select2/dist/css/select2.min.css';
-@import 'cropperjs/dist/cropper.min.css';
-
-@import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
+@import '~select2/src/scss/core';
+@import '~cropperjs/src/css/cropper.scss';
+@import '~bootstrap-datepicker/dist/css/bootstrap-datepicker';
 
 @import "helpers/vars";
 @import "helpers/mixins";
 
-@import 'bootstrap/dist/css/bootstrap.min.css';
-
-@import "vendors/optiscroll";
+@import '~bootstrap/scss/bootstrap';
+@import "~optiscroll/scss/optiscroll";
 
 @import "base/fonts";
 @import "base/normalize";
