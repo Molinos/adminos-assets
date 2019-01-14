@@ -1,1 +1,1 @@
-A set of assets for [admino](https://github.com/Molinos/adminos) gem.
+A set of assets for [adminos](https://github.com/Molinos/adminos) gem.
