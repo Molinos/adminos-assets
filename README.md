@@ -30,4 +30,3 @@ Then include packs into `app/views/layouts/admin.slim`:
 = javascript_pack_tag 'admin'
 = stylesheet_pack_tag 'admin'
 ```
->>>>>>> 5f69957... Describe minimal setup needed for Adminos
