@@ -3,10 +3,6 @@ import $ from 'jquery';
 window.$ = window.jQuery = $;
 
 import 'optiscroll/dist/jquery.optiscroll'
-
-import Rails from 'rails-ujs'
-Rails.start();
-
 import 'jquery-autosize';
 
 import 'jquery-ui/ui/widgets/sortable';
@@ -20,9 +16,6 @@ import 'select2/dist/js/i18n/ru';
 import 'bootstrap-datepicker/dist/js/bootstrap-datepicker.min';
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min';
 import 'bootstrap/dist/js/bootstrap.min';
-
-import * as ActiveStorage from 'activestorage'
-ActiveStorage.start();
 
 import 'actiontext'
 
