@@ -29,6 +29,7 @@
     "optiscroll": "^3.2.1",
     "popper.js": "^1.14.6",
     "rails-ujs": "^5.2.2",
+    "resolve-url-loader": "^3.0.0",
     "select2": "^4.0.6-rc.1",
     "select2-bootstrap-theme": "^0.1.0-beta.10",
     "spin": "0.0.1"
