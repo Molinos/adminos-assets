@@ -1,14 +1,23 @@
-@import 'select2/dist/css/select2.min.css';
-@import 'cropperjs/dist/cropper.min.css';
-
-@import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
+@import "~select2/src/scss/core";
+@import "select2-bootstrap-theme/dist/select2-bootstrap.min.css";
+@import "~cropperjs/src/css/cropper.scss";
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker";
 
 @import "helpers/vars";
 @import "helpers/mixins";
+@import "helpers/actiontext";
 
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap/scss/bootstrap";
+@import "~optiscroll/scss/optiscroll";
 
-@import "vendors/optiscroll";
+// Fix hiding optiscroll
+.optiscroll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
 
 @import "base/fonts";
 @import "base/normalize";
@@ -68,7 +77,7 @@
 
 .kaya-input {
   &--code {
-    font-family: 'Monaco', monospace;
+    font-family: "Monaco", monospace;
   }
 }
 
