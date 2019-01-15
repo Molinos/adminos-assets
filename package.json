@@ -16,7 +16,7 @@
   ],
   "main": "adminos.js",
   "dependencies": {
-    "actiontext": "https://github.com/rails/actiontext#cfe4674d",
+    "actiontext": "https://github.com/rails/actiontext#cfe4674d3637c746cdb3c2b5131e2de498775529",
     "bootstrap": "^4.1.3",
     "bootstrap-datepicker": "^1.8.0",
     "cropperjs": "^1.4.3",
