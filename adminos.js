@@ -2,8 +2,10 @@ import 'jquery';
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
-import 'optiscroll/dist/jquery.optiscroll'
+import 'optiscroll/dist/jquery.optiscroll';
 import 'jquery-autosize';
+
+import './src/js/filters';
 
 import 'jquery-ui/ui/widgets/sortable';
 import 'nestedSortable';
