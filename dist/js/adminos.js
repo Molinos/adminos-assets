@@ -220,6 +220,35 @@ $(function events() {
 });
 "use strict";
 
+$(function () {
+  document.querySelectorAll('.select_filter').forEach(function (el) {
+    el.addEventListener('change', function (e) {
+      var element = e.currentTarget;
+      var selectedValue = element.selectedOptions[0].value;
+      var input = element.nextSibling; // q[name_cont] ==> q[name_end]
+
+      input.name = input.name.replace(/(\[).+?(\])/g, "$1" + selectedValue + "$2");
+    });
+  });
+
+  if (document.querySelector('.filter-form')) {
+    document.querySelector('.filter-form').addEventListener('submit', function (e) {
+      var search = document.querySelector('#query');
+
+      if (search) {
+        var input = document.createElement("input");
+        input.type = 'hidden';
+        input.name = search.name;
+        input.value = search.value;
+        e.currentTarget.appendChild(input);
+      }
+
+      return true;
+    });
+  }
+});
+"use strict";
+
 var _railsUjs = _interopRequireDefault(require("rails-ujs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -260,22 +289,22 @@ $(function sort() {
       var content = '';
       var img = $(el).find('.sortable-helper');
 
-      if (img.length > 0) {
-        content = "<img src=\"".concat($(img).attr('src'), "\"/>");
+      if (img.size() > 0) {
+        content = '<img src="' + $(img).attr('src') + '"/>';
       } else {
         content = $(el).attr('data-placeholder');
       }
 
-      return "<div class=\"helper\" style=\"width: auto; height: auto\">".concat(content, "</div>");
+      return '<div class="helper" style="width: auto; height: auto">' + content + '</div>';
     },
     appendTo: 'body',
     handler: 'icon-move',
     items: $(this).attr('items'),
-    stop: function stop() {
+    stop: function stop(event, ui) {
       var url = $(this).attr('data-sortable');
 
       if (url) {
-        var ids = $.map($(this).children(), function (e) {
+        var ids = $.map($(this).children(), function (e, idx) {
           return $(e).attr('data-id');
         });
         $.ajax({
@@ -342,7 +371,7 @@ $.fn.withNestedSortable = function (options) {
   var settings = $.extend({}, defaults, options);
   $(this).nestedSortable({
     listType: 'ul',
-    opacity: 0.8,
+    opacity: .8,
     items: 'li',
     tabSize: 32,
     maxLevels: settings.maxLevels,
@@ -359,21 +388,21 @@ $.fn.withNestedSortable = function (options) {
       var li = ui.item;
       li.removeClass('dragging');
       var id = li.attr('rel');
-      var parentId = li.parents('li').attr('rel');
-      var prevId = li.prev('li').first().attr('rel');
+      var parent_id = li.parents('li').attr('rel');
+      var prev_id = li.prev('li').first().attr('rel');
 
-      if (parentId == null) {
-        parentId = undefined;
+      if (parent_id == null) {
+        parent_id = undefined;
       }
 
-      if (prevId == null) {
-        prevId = undefined;
+      if (prev_id == null) {
+        prev_id = undefined;
       }
 
       var data = {
         _method: 'PUT',
-        prevId: prevId,
-        parentId: parentId
+        prev_id: prev_id,
+        parent_id: parent_id
       };
       $.ajax({
         async: false,

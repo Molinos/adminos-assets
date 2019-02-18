@@ -1,12 +1,12 @@
-$.fn.withNestedSortable = function (options) {
-  const defaults = $.extend({}, $.fn.withNestedSortable.defaults, {
-    maxLevels: $(this).attr('max-levels'),
+$.fn.withNestedSortable = function(options) {
+  var defaults = $.extend({}, $.fn.withNestedSortable.defaults, {
+    maxLevels: $(this).attr('max-levels')
   });
-  const settings = $.extend({}, defaults, options);
+  var settings = $.extend({}, defaults, options);
 
   $(this).nestedSortable({
     listType: 'ul',
-    opacity: 0.8,
+    opacity: .8,
     items: 'li',
     tabSize: 32,
     maxLevels: settings.maxLevels,
@@ -16,26 +16,22 @@ $.fn.withNestedSortable = function (options) {
     tolerance: 'pointer',
     toleranceElement: '> div',
     handle: '.-move',
-    start(event, ui) {
+    start: function(event, ui) {
       $(ui.helper).addClass('dragging');
     },
-    stop(event, ui) {
-      const li = ui.item;
+    stop: function(event, ui) {
+      var li = ui.item;
       li.removeClass('dragging');
-      const id = li.attr('rel');
-      let parentId = li.parents('li').attr('rel');
-      let prevId = li.prev('li').first().attr('rel');
-      if (parentId == null) {
-        parentId = undefined;
-      }
-      if (prevId == null) {
-        prevId = undefined;
-      }
+      var id = li.attr('rel');
+      var parent_id = li.parents('li').attr('rel');
+      var prev_id = li.prev('li').first().attr('rel');
+      if (parent_id == null) { parent_id = undefined }
+      if (prev_id == null) { prev_id = undefined }
 
-      const data = {
+      var data = {
         _method: 'PUT',
-        prevId,
-        parentId,
+        prev_id: prev_id,
+        parent_id: parent_id
       };
 
       $.ajax({
@@ -43,13 +39,13 @@ $.fn.withNestedSortable = function (options) {
         type: 'POST',
         url: li.attr('href'),
         dataType: 'script',
-        data,
+        data: data
       });
-    },
+    }
   });
-};
+}
 $.fn.withNestedSortable.defaults = {
-  maxLevels: 0,
+  maxLevels: 0
 };
 
 // AJAX request with authenticity_token (in caching case).

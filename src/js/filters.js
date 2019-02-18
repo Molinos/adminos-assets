@@ -10,18 +10,20 @@ $(function () {
     });
   });
 
-  document.querySelector('.filter-form').addEventListener('submit', e => {
-    let search = document.querySelector('#query')
+  if (document.querySelector('.filter-form')) {
+    document.querySelector('.filter-form').addEventListener('submit', e => {
+      let search = document.querySelector('#query')
 
-    if (search) {
-      let input = document.createElement("input");
-      input.type = 'hidden';
-      input.name = search.name;
-      input.value = search.value;
+      if (search) {
+        let input = document.createElement("input");
+        input.type = 'hidden';
+        input.name = search.name;
+        input.value = search.value;
 
-      e.currentTarget.appendChild(input);
-    }
+        e.currentTarget.appendChild(input);
+      }
 
-    return true;
-  });
+      return true;
+    });
+  }
 });
