@@ -19,48 +19,40 @@ $(function sort() {
 
   $('.with-move-to').sortable({
     handle: '.icon-move',
-    stop(event, ui) {
-      const to = ui.item.prev().data('id');
-      const url = ui.item.data('href');
-      $.post(url, {
-        to,
-      });
-    },
+    stop: function(event, ui) {
+      var to = ui.item.prev().data('id');
+      var url = ui.item.data('href');
+      $.post(url, {to :to})
+    }
   });
 
   $('.with-apply-sortable-order[data-sortable]').sortable({
     opacity: 0.6,
-    helper(event, el) {
-      let content = '';
-      const img = $(el).find('.sortable-helper');
-      if (img.length > 0) {
-        content = `<img src="${$(img).attr('src')}"/>`;
+    helper: function(event, el) {
+      var content = '';
+      var img = $(el).find('.sortable-helper');
+      if (img.size() > 0) {
+        content = '<img src="' + $(img).attr('src') + '"/>';
       } else {
         content = $(el).attr('data-placeholder');
       }
-
-      return `<div class="helper" style="width: auto; height: auto">${content}</div>`;
+      return '<div class="helper" style="width: auto; height: auto">' + content + '</div>';
     },
     appendTo: 'body',
     handler: 'icon-move',
     items: $(this).attr('items'),
-    stop() {
-      const url = $(this).attr('data-sortable');
+    stop: function(event, ui) {
+      var url = $(this).attr('data-sortable');
       if (url) {
-        const ids = $.map(
+        var ids = $.map(
           $(this).children(),
-          e => $(e).attr('data-id'),
+          function(e, idx) {
+            return $(e).attr('data-id');
+          }
         );
 
-        $.ajax({
-          type: 'post',
-          dataType: 'script',
-          data: {
-            id: ids,
-          },
-          url,
-        });
+        $.ajax({type: 'post', dataType: 'script', data: {id: ids}, url: url});
       }
-    },
-  });
+    }
+    });
 });
