@@ -1,8 +1,8 @@
 $.fn.withNestedSortable = function(options) {
-  var defaults = $.extend({}, $.fn.withNestedSortable.defaults, {
+  let defaults = $.extend({}, $.fn.withNestedSortable.defaults, {
     maxLevels: $(this).attr('max-levels')
   });
-  var settings = $.extend({}, defaults, options);
+  let settings = $.extend({}, defaults, options);
 
   $(this).nestedSortable({
     listType: 'ul',
@@ -20,15 +20,15 @@ $.fn.withNestedSortable = function(options) {
       $(ui.helper).addClass('dragging');
     },
     stop: function(event, ui) {
-      var li = ui.item;
+      let li = ui.item;
       li.removeClass('dragging');
-      var id = li.attr('rel');
-      var parent_id = li.parents('li').attr('rel');
-      var prev_id = li.prev('li').first().attr('rel');
+      let id = li.attr('rel');
+      let parent_id = li.parents('li').attr('rel');
+      let prev_id = li.prev('li').first().attr('rel');
       if (parent_id == null) { parent_id = undefined }
       if (prev_id == null) { prev_id = undefined }
 
-      var data = {
+      let data = {
         _method: 'PUT',
         prev_id: prev_id,
         parent_id: parent_id
