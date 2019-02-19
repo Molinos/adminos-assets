@@ -10,8 +10,10 @@ $(function () {
     });
   });
 
-  if (document.querySelector('.filter-form')) {
-    document.querySelector('.filter-form').addEventListener('submit', e => {
+  let filterForm = document.querySelector('.filter-form');
+
+  if (filterForm) {
+    filterForm.addEventListener('submit', e => {
       let search = document.querySelector('#query')
 
       if (search) {

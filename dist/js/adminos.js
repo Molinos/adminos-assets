@@ -230,9 +230,10 @@ $(function () {
       input.name = input.name.replace(/(\[).+?(\])/g, "$1" + selectedValue + "$2");
     });
   });
+  var filterForm = document.querySelector('.filter-form');
 
-  if (document.querySelector('.filter-form')) {
-    document.querySelector('.filter-form').addEventListener('submit', function (e) {
+  if (filterForm) {
+    filterForm.addEventListener('submit', function (e) {
       var search = document.querySelector('#query');
 
       if (search) {
