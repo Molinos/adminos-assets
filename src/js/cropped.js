@@ -8,21 +8,62 @@ import Cropper from 'cropperjs';
       let crop_coord = document.querySelector('input[name*="' + img.dataset.coord + '"]');
       const preview_class = img.dataset.preview;
       const aspectRatio = img.dataset.aspectRatio
+      const wdthInput = img.closest('.cropp').querySelector('input[name="width"]');
+      const heightInput = img.closest('.cropp').querySelector('input[name="height"]');
 
       const cropper = new Cropper(img, {
         aspectRatio: aspectRatio,
         preview: preview_class,
         maxContainerWidth: '200px',
-        crop(event) {
+        ready(event) {
+          const array = crop_coord.value.split(/x|\+/);
+          const width = array[0],
+            height = array[1],
+            x = array[2],
+            y = array[3];
 
-          const width = Math.round(event.detail.width);
-          const height = Math.round(event.detail.height);
-          const x = Math.round(event.detail.x);
-          const y = Math.round(event.detail.y);
+          if (width && height && x && y) {
+            cropper.setData({
+              width: Math.round(width),
+              height: Math.round(height),
+              x: Math.round(x),
+              y: Math.round(y)
+            })
+          }
+        },
+        crop(event) {
+          wdthInput.value = Math.round(event.detail.width);
+          heightInput.value = Math.round(event.detail.height);
+        },
+        cropend(event) {
+
+          const detail = cropper.getData();
+
+          const width = Math.round(detail.width);
+          const height = Math.round(detail.height);
+          const x = Math.round(detail.x);
+          const y = Math.round(detail.y);
 
           crop_coord.value = width + 'x' + height + '+' + x + '+' + y;
         },
       });
+
+      wdthInput.addEventListener('change', e => {
+        console.log('change', e.currentTarget.value);
+
+        cropper.setData({
+          width: Math.round(e.currentTarget.value)
+        });
+      });
+
+      heightInput.addEventListener('change', e => {
+        console.log('change', e.currentTarget.value);
+
+        cropper.setData({
+          height: Math.round(e.currentTarget.value)
+        });
+      });
+
     });
   });
 })();

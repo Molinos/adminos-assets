@@ -26,3 +26,5 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   require('./dist/js/adminos');
 }
+
+import './src/js/cropped';
