@@ -4,6 +4,17 @@
   min-height: 200px;
 }
 
+.cropper-dimensions {
+  display: flex;
+  width: 210px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  .field {
+    width: 100px;
+  }
+}
+
 @media (min-width: 768px) {
   .img-container {
     min-height: 497px;
