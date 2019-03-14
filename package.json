@@ -1,6 +1,6 @@
 {
   "name": "adminos",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "description": "Assets for adminos",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
