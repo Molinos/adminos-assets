@@ -83,17 +83,52 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       var crop_coord = document.querySelector('input[name*="' + img.dataset.coord + '"]');
       var preview_class = img.dataset.preview;
       var aspectRatio = img.dataset.aspectRatio;
+      var wdthInput = img.closest('.cropp').querySelector('input[name="width"]');
+      var heightInput = img.closest('.cropp').querySelector('input[name="height"]');
       var cropper = new _cropperjs.default(img, {
         aspectRatio: aspectRatio,
         preview: preview_class,
         maxContainerWidth: '200px',
+        ready: function ready(event) {
+          var array = crop_coord.value.split(/x|\+/);
+          var width = array[0],
+              height = array[1],
+              x = array[2],
+              y = array[3];
+
+          if (width && height && x && y) {
+            cropper.setData({
+              width: Math.round(width),
+              height: Math.round(height),
+              x: Math.round(x),
+              y: Math.round(y)
+            });
+          }
+        },
         crop: function crop(event) {
-          var width = Math.round(event.detail.width);
-          var height = Math.round(event.detail.height);
-          var x = Math.round(event.detail.x);
-          var y = Math.round(event.detail.y);
+          wdthInput.value = Math.round(event.detail.width);
+          heightInput.value = Math.round(event.detail.height);
+        },
+        cropend: function cropend(event) {
+          var detail = cropper.getData();
+          var width = Math.round(detail.width);
+          var height = Math.round(detail.height);
+          var x = Math.round(detail.x);
+          var y = Math.round(detail.y);
           crop_coord.value = width + 'x' + height + '+' + x + '+' + y;
         }
+      });
+      wdthInput.addEventListener('change', function (e) {
+        console.log('change', e.currentTarget.value);
+        cropper.setData({
+          width: Math.round(e.currentTarget.value)
+        });
+      });
+      heightInput.addEventListener('change', function (e) {
+        console.log('change', e.currentTarget.value);
+        cropper.setData({
+          height: Math.round(e.currentTarget.value)
+        });
       });
     });
   });
@@ -362,6 +397,15 @@ $(function () {
     });
     return this;
   };
+});
+"use strict";
+
+$(function () {
+  var parentNode = $('li.list__item');
+  var childNode = $('li.list__item > ul');
+  $(document).on('click', parentNode, function () {
+    childNode.slideToggle();
+  });
 });
 "use strict";
 

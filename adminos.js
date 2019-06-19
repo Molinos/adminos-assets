@@ -6,6 +6,7 @@ import 'optiscroll/dist/jquery.optiscroll';
 import 'jquery-autosize';
 
 import './src/js/filters';
+import './src/js/tree_roll-up';
 
 import 'jquery-ui/ui/widgets/sortable';
 import 'nestedSortable';
