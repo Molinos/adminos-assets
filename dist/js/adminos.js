@@ -400,15 +400,6 @@ $(function () {
 });
 "use strict";
 
-$(function () {
-  var parentNode = $('li.list__item');
-  var childNode = $('li.list__item > ul');
-  $(document).on('click', parentNode, function () {
-    childNode.slideToggle();
-  });
-});
-"use strict";
-
 $.fn.withNestedSortable = function (options) {
   var defaults = $.extend({}, $.fn.withNestedSortable.defaults, {
     maxLevels: $(this).attr('max-levels')

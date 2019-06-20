@@ -1,16 +1,59 @@
 $(document).ready(function () {
-  const parentNode = $('div.list-item');
-
-  $('div.list-item').on('click', function (e) {
+  $(document).on('click', 'div.list-item', function (e) {
+    console.log('meow!');
     e.stopPropagation();
-    // console.log('meow!');
-    console.log('tree-roll-up.js 1');
-    $(this).siblings('ul').addClass('list__list');
-    $(this).siblings('ul.list__list').slideToggle();
+    // $(this).siblings('ul.list__list').slideToggle();
+    $(this).siblings('ul').slideToggle();
+    $(this).find('.list-item__more-arrow').toggleClass('arrow-rotate');
   });
 
-  $('.list-item *').on('click', function (e) {
-    console.log('tree-roll-up.js 2');
+  $(document).on('click', '.list-item *', function (e) {
     e.stopPropagation();
   });
+
+  function addArrow(element) {
+    if ($(element).siblings('ul').length) {
+      // $(element).siblings('ul').addClass('list__list');
+      if (!$(element).children('.list-item__more-arrow').length) {
+        $(element).append('<svg class="list-item__more-arrow arrow-rotate" xmlns="http://www.w3.org/2000/svg" width="10" height="6">' +
+            '<path fill="#191919" d="M1.2 0L0 1.1 5 6l5-4.9L8.8 0 5 3.7 1.2 0z"/></svg>');
+      }
+    } else {
+      if ($(element).children('.list-item__more-arrow').length) {
+        const arrow = $(element).children('.list-item__more-arrow');
+        $(arrow).remove();
+      }
+    }
+  }
+
+  $('div.list-item').each(function () {
+    addArrow($(this));
+  });
+
+  let i = 0;
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function () {
+      $('div.list-item').each(function () {
+        addArrow($(this));
+        i++;
+        console.log(i);
+      });
+    });
+  });
+
+  const config = { childList: true, subtree: true };
+
+  function addObserverIfDesiredNodeAvailable() {
+    const tree = $('ul.ui-sortable')[0];
+    if (!tree) {
+      //The node we need does not exist yet.
+      //Wait 500ms and try again
+      window.setTimeout(addObserverIfDesiredNodeAvailable, 500);
+
+      return;
+    }
+
+    observer.observe(tree, config);
+  }
+  addObserverIfDesiredNodeAvailable();
 });
