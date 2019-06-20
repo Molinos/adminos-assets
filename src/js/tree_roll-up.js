@@ -1,9 +1,7 @@
 $(document).ready(function () {
   $(document).on('click', 'div.list-item', function (e) {
-    console.log('meow!');
     e.stopPropagation();
-    // $(this).siblings('ul.list__list').slideToggle();
-    $(this).siblings('ul').slideToggle();
+    $(this).siblings('ul.list__list').slideToggle();
     $(this).find('.list-item__more-arrow').toggleClass('arrow-rotate');
   });
 
@@ -13,7 +11,7 @@ $(document).ready(function () {
 
   function addArrow(element) {
     if ($(element).siblings('ul').length) {
-      // $(element).siblings('ul').addClass('list__list');
+      $(element).siblings('ul').addClass('list__list');
       if (!$(element).children('.list-item__more-arrow').length) {
         $(element).append('<svg class="list-item__more-arrow arrow-rotate" xmlns="http://www.w3.org/2000/svg" width="10" height="6">' +
             '<path fill="#191919" d="M1.2 0L0 1.1 5 6l5-4.9L8.8 0 5 3.7 1.2 0z"/></svg>');
@@ -30,13 +28,10 @@ $(document).ready(function () {
     addArrow($(this));
   });
 
-  let i = 0;
   const observer = new MutationObserver(function (mutations) {
     mutations.forEach(function () {
       $('div.list-item').each(function () {
         addArrow($(this));
-        i++;
-        console.log(i);
       });
     });
   });
