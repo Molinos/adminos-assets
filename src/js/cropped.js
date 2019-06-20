@@ -8,7 +8,7 @@ import Cropper from 'cropperjs';
       let crop_coord = document.querySelector('input[name*="' + img.dataset.coord + '"]');
       const preview_class = img.dataset.preview;
       const aspectRatio = img.dataset.aspectRatio
-      const wdthInput = img.closest('.cropp').querySelector('input[name="width"]');
+      const widthInput = img.closest('.cropp').querySelector('input[name="width"]');
       const heightInput = img.closest('.cropp').querySelector('input[name="height"]');
 
       const cropper = new Cropper(img, {
@@ -32,7 +32,7 @@ import Cropper from 'cropperjs';
           }
         },
         crop(event) {
-          wdthInput.value = Math.round(event.detail.width);
+          widthInput.value = Math.round(event.detail.width);
           heightInput.value = Math.round(event.detail.height);
         },
         cropend(event) {
@@ -48,7 +48,7 @@ import Cropper from 'cropperjs';
         },
       });
 
-      wdthInput.addEventListener('change', e => {
+      widthInput.addEventListener('change', e => {
         console.log('change', e.currentTarget.value);
 
         cropper.setData({
