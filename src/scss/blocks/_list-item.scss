@@ -92,4 +92,17 @@
       //height: 24px;
     }
   }
+
+  &__more-arrow {
+    position: absolute;
+    top: calc(50% - 3px);
+    left: -20px;
+    transition: transform 0.3s;
+
+    &.arrow-rotate {
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: transform 0.3s;
+    }
+  }
 }
