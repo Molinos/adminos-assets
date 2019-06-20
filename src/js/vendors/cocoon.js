@@ -104,7 +104,6 @@
       node_to_delete = $this.closest('.' + wrapper_class),
       trigger_node = node_to_delete.parent();
 
-
     e.preventDefault();
 
     var before_remove = jQuery.Event('cocoon:before-remove');
