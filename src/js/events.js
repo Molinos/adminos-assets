@@ -97,13 +97,11 @@ $(function events() {
   });
   */
 
-  $(document).ready(() => {
-    const sidebarDropdown = $('.sidebar__header-content');
-
-
-    const sidebarDropdownHeight = sidebarDropdown.height();
-    sidebarDropdown.css('margin-top', -sidebarDropdownHeight);
-  });
+  // $(document).ready(() => {
+  //   const sidebarDropdown = $('.sidebar__header-content');
+  //   const sidebarDropdownHeight = sidebarDropdown.height();
+  //   sidebarDropdown.css('margin-top', -sidebarDropdownHeight);
+  // });
 
   $(window).on('load turbolinks:load', () => {
     $('.sidebar').find('.nav__group .nav__item.active').each(() => {

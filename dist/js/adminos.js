@@ -222,12 +222,12 @@ $(function events() {
     });
   });
   */
+  // $(document).ready(() => {
+  //   const sidebarDropdown = $('.sidebar__header-content');
+  //   const sidebarDropdownHeight = sidebarDropdown.height();
+  //   sidebarDropdown.css('margin-top', -sidebarDropdownHeight);
+  // });
 
-  $(document).ready(function () {
-    var sidebarDropdown = $('.sidebar__header-content');
-    var sidebarDropdownHeight = sidebarDropdown.height();
-    sidebarDropdown.css('margin-top', -sidebarDropdownHeight);
-  });
   $(window).on('load turbolinks:load', function () {
     $('.sidebar').find('.nav__group .nav__item.active').each(function () {
       var group = $(_this).closest('.nav__group');
