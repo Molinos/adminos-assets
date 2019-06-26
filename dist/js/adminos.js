@@ -189,14 +189,6 @@ $(function events() {
       $('.nav__group').not(group).removeClass('opened');
     }
   });
-  $('a[href="/admin/users?direction=asc&order_by=email"]').each(function () {
-    $(this).siblings('.icon-chevron-down')[0].find('.icon-more-arrow').addClass('icon-more-arrow--down');
-    console.log($(this).siblings('.icon-chevron-down')[0].find('.icon-more-arrow'));
-  });
-  $('a[href="/admin/users?direction=desc&order_by=email"]').each(function () {
-    $(this).siblings('.icon-chevron-down')[0].find('.icon-more-arrow').removeClass('icon-more-arrow--down');
-    console.log('now desc');
-  });
   $(document).on('change', '.uploader__check input', function () {
     var item = $(this).closest('.uploader__item');
 

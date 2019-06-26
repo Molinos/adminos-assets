@@ -96,10 +96,14 @@
     margin-left: 5px;
     transition: all 0.3s;
 
-    &--down {
-      transform: rotate(180deg);
-      transition: all 0.3s;
-    }
+    //&--down {
+    //
+    //}
+  }
+
+  a[href="/admin/users?direction=asc&order_by=email"] + .icon-chevron-down > .icon-more-arrow svg {
+    transform: rotate(180deg);
+    transition: all 0.3s;
   }
 }
 // scss-lint:enable QualifyingElement
