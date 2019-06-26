@@ -83,7 +83,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       var crop_coord = document.querySelector('input[name*="' + img.dataset.coord + '"]');
       var preview_class = img.dataset.preview;
       var aspectRatio = img.dataset.aspectRatio;
-      var wdthInput = img.closest('.cropp').querySelector('input[name="width"]');
+      var widthInput = img.closest('.cropp').querySelector('input[name="width"]');
       var heightInput = img.closest('.cropp').querySelector('input[name="height"]');
       var cropper = new _cropperjs.default(img, {
         aspectRatio: aspectRatio,
@@ -106,7 +106,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
           }
         },
         crop: function crop(event) {
-          wdthInput.value = Math.round(event.detail.width);
+          widthInput.value = Math.round(event.detail.width);
           heightInput.value = Math.round(event.detail.height);
         },
         cropend: function cropend(event) {
@@ -118,7 +118,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
           crop_coord.value = width + 'x' + height + '+' + x + '+' + y;
         }
       });
-      wdthInput.addEventListener('change', function (e) {
+      widthInput.addEventListener('change', function (e) {
         console.log('change', e.currentTarget.value);
         cropper.setData({
           width: Math.round(e.currentTarget.value)
@@ -177,6 +177,25 @@ $(function events() {
   $(document).on('click', '.nav__link', function () {
     var group = $(this).closest('.nav__group');
     $('.nav__group').not(group).removeClass('opened');
+  });
+  $('.nav__item').each(function () {
+    if ($(this).hasClass('active')) {
+      var group = $(this).closest('.nav__group');
+
+      if (group.hasClass('opened') === false) {
+        group.addClass('opened');
+      }
+
+      $('.nav__group').not(group).removeClass('opened');
+    }
+  });
+  $('a[href="/admin/users?direction=asc&order_by=email"]').each(function () {
+    $(this).siblings('.icon-chevron-down')[0].find('.icon-more-arrow').addClass('icon-more-arrow--down');
+    console.log($(this).siblings('.icon-chevron-down')[0].find('.icon-more-arrow'));
+  });
+  $('a[href="/admin/users?direction=desc&order_by=email"]').each(function () {
+    $(this).siblings('.icon-chevron-down')[0].find('.icon-more-arrow').removeClass('icon-more-arrow--down');
+    console.log('now desc');
   });
   $(document).on('change', '.uploader__check input', function () {
     var item = $(this).closest('.uploader__item');
@@ -397,6 +416,63 @@ $(function () {
     });
     return this;
   };
+});
+"use strict";
+
+$(document).ready(function () {
+  $(document).on('click', 'div.list-item', function (e) {
+    e.stopPropagation();
+    $(this).siblings('ul.list__list').slideToggle();
+    $(this).find('.list-item__more-arrow').toggleClass('arrow-rotate');
+  });
+  $(document).on('click', '.list-item *', function (e) {
+    e.stopPropagation();
+  });
+
+  function addArrow(element) {
+    if ($(element).siblings('ul').length) {
+      $(element).siblings('ul').addClass('list__list');
+
+      if (!$(element).children('.list-item__more-arrow').length) {
+        $(element).append('<svg class="list-item__more-arrow arrow-rotate" xmlns="http://www.w3.org/2000/svg" width="10" height="6">' + '<path fill="#191919" d="M1.2 0L0 1.1 5 6l5-4.9L8.8 0 5 3.7 1.2 0z"/></svg>');
+      }
+    } else {
+      if ($(element).children('.list-item__more-arrow').length) {
+        var arrow = $(element).children('.list-item__more-arrow');
+        $(arrow).remove();
+      }
+    }
+  }
+
+  $('div.list-item').each(function () {
+    addArrow($(this));
+  });
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function () {
+      $('div.list-item').each(function () {
+        addArrow($(this));
+      });
+    });
+  });
+  var config = {
+    childList: true,
+    subtree: true
+  };
+
+  function addObserverIfDesiredNodeAvailable() {
+    var tree = $('ul.ui-sortable')[0];
+
+    if (!tree) {
+      //The node we need does not exist yet.
+      //Wait 500ms and try again
+      window.setTimeout(addObserverIfDesiredNodeAvailable, 500);
+      return;
+    }
+
+    observer.observe(tree, config);
+  }
+
+  addObserverIfDesiredNodeAvailable();
 });
 "use strict";
 

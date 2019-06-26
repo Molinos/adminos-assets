@@ -91,5 +91,15 @@
       padding-top: 0;
     }
   }
+
+  .icon-more-arrow {
+    margin-left: 5px;
+    transition: all 0.3s;
+
+    &--down {
+      transform: rotate(180deg);
+      transition: all 0.3s;
+    }
+  }
 }
 // scss-lint:enable QualifyingElement
