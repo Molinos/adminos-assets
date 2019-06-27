@@ -33,4 +33,10 @@
     //background-color: $gray-color;
     cursor: default;
   }
+
+  &--top {
+    position: absolute;
+    top: 0;
+    right: 20px;
+  }
 }

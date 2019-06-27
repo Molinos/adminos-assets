@@ -12,7 +12,7 @@ const tildeImporter = require('node-sass-tilde-importer');
 
 gulp.task('css', () => gulp.src('src/scss/adminos_base.scss')
   .pipe(sass({
-    includePaths: ['./src/scss', "./node_modules"],
+    includePaths: ['./src/scss', './node_modules'],
     importer: tildeImporter
   }).on('error', notify.onError()))
   .pipe(minifyCSS())
@@ -50,4 +50,4 @@ const tasks = {
   production: ['build'],
 };
 
-gulp.task('default', tasks[process.env.NODE_ENV] || 'fallback');
+// gulp.task('default', [tasks[process.env.NODE_ENV] || 'fallback']);
