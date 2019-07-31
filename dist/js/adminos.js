@@ -2,7 +2,27 @@
 
 var ActiveStorage = _interopRequireWildcard(require("activestorage"));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};
+    if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};
+          if (desc.get || desc.set) {
+            Object.defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+    }
+    newObj.default = obj;
+    return newObj;
+  }
+}
 
 ActiveStorage.start();
 "use strict";
@@ -74,7 +94,6 @@ $(window).on('turbolinks:load', function () {
 
 var _cropperjs = _interopRequireDefault(require("cropperjs"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function ($) {
   document.addEventListener("DOMContentLoaded", function () {
@@ -92,9 +111,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         ready: function ready(event) {
           var array = crop_coord.value.split(/x|\+/);
           var width = array[0],
-              height = array[1],
-              x = array[2],
-              y = array[3];
+            height = array[1],
+            x = array[2],
+            y = array[3];
 
           if (width && height && x && y) {
             cropper.setData({
@@ -298,7 +317,6 @@ $(function () {
 
 var _railsUjs = _interopRequireDefault(require("rails-ujs"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _railsUjs.default.start();
 "use strict";
@@ -370,7 +388,11 @@ $(function sort() {
 
 var _spin = _interopRequireDefault(require("spin/dist/spin.min"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
 
 var spinnerOpts = {
   lines: 11,
@@ -619,18 +641,18 @@ $.fn.addLinkToSubmitForm = function () {
   $(document).on('click', '.add_fields', function (e) {
     e.preventDefault();
     var $this = $(this),
-        assoc = $this.data('association'),
-        assocs = $this.data('associations'),
-        content = $this.data('association-insertion-template'),
-        insertionMethod = $this.data('association-insertion-method') || $this.data('association-insertion-position') || 'before',
-        insertionNode = $this.data('association-insertion-node'),
-        insertionTraversal = $this.data('association-insertion-traversal'),
-        count = parseInt($this.data('count'), 10),
-        regexp_braced = new RegExp('\\[new_' + assoc + '\\](.*?\\s)', 'g'),
-        regexp_underscord = new RegExp('_new_' + assoc + '_(\\w*)', 'g'),
-        new_id = create_new_id(),
-        new_content = content.replace(regexp_braced, newcontent_braced(new_id)),
-        new_contents = [];
+      assoc = $this.data('association'),
+      assocs = $this.data('associations'),
+      content = $this.data('association-insertion-template'),
+      insertionMethod = $this.data('association-insertion-method') || $this.data('association-insertion-position') || 'before',
+      insertionNode = $this.data('association-insertion-node'),
+      insertionTraversal = $this.data('association-insertion-traversal'),
+      count = parseInt($this.data('count'), 10),
+      regexp_braced = new RegExp('\\[new_' + assoc + '\\](.*?\\s)', 'g'),
+      regexp_underscord = new RegExp('_new_' + assoc + '_(\\w*)', 'g'),
+      new_id = create_new_id(),
+      new_content = content.replace(regexp_braced, newcontent_braced(new_id)),
+      new_contents = [];
 
     if (new_content == content) {
       regexp_braced = new RegExp('\\[new_' + assocs + '\\](.*?\\s)', 'g');
@@ -673,9 +695,9 @@ $.fn.addLinkToSubmitForm = function () {
   });
   $(document).on('click', '.remove_fields.dynamic, .remove_fields.existing', function (e) {
     var $this = $(this),
-        wrapper_class = $this.data('wrapper-class') || 'nested-fields',
-        node_to_delete = $this.closest('.' + wrapper_class),
-        trigger_node = node_to_delete.parent();
+      wrapper_class = $this.data('wrapper-class') || 'nested-fields',
+      node_to_delete = $this.closest('.' + wrapper_class),
+      trigger_node = node_to_delete.parent();
     e.preventDefault();
     var before_remove = jQuery.Event('cocoon:before-remove');
     trigger_node.trigger(before_remove, [node_to_delete]);
@@ -697,7 +719,7 @@ $.fn.addLinkToSubmitForm = function () {
   $(document).on("ready page:load turbolinks:load", function () {
     $('.remove_fields.existing.destroyed').each(function (i, obj) {
       var $this = $(this),
-          wrapper_class = $this.data('wrapper-class') || 'nested-fields';
+        wrapper_class = $this.data('wrapper-class') || 'nested-fields';
       $this.closest('.' + wrapper_class).hide();
     });
   });
