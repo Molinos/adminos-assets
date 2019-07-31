@@ -22,10 +22,6 @@ import 'bootstrap/dist/js/bootstrap.min';
 
 import 'actiontext'
 
-if (process.env.NODE_ENV === 'production') {
-  require('./dist/js/adminos.min');
-} else {
-  require('./dist/js/adminos');
-}
+require('./dist/js/adminos');
 
 import './src/js/cropped';
