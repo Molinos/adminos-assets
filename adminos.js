@@ -7,6 +7,7 @@ import 'jquery-autosize';
 
 import './src/js/filters';
 import './src/js/tree_roll-up';
+import './src/js/multicheckbox';
 
 import 'jquery-ui/ui/widgets/sortable';
 import 'nestedSortable';
