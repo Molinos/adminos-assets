@@ -1,4 +1,4 @@
-$(function sort() {
+$(function () {
   $('.with-nested-sortable > ul').withNestedSortable();
   $('a.ajax-post').ajaxRequestLink();
   $('a.ajax-delete').ajaxRequestLink({

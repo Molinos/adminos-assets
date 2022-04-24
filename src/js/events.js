@@ -16,7 +16,7 @@ const spinnerOpts = {
   left: 'auto',
 };
 
-$(function events() {
+$(function () {
   const isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|Android|Windows Phone|Opera Mobi)/i) != null;
   const hasTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 

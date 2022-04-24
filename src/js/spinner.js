@@ -1,4 +1,4 @@
-import Spinner from 'spin/dist/spin.min';
+require('spin/dist/spin.min');
 
 const spinnerOpts = {
   lines: 11,
@@ -29,6 +29,7 @@ $(() => {
         delete data.spinner;
       }
       if (spinnerOpts !== false) {
+        // eslint-disable-next-line no-undef
         data.spinner = new Spinner($.extend({
           color: $this.css('color'),
         }, spinnerOpts)).spin(this);
