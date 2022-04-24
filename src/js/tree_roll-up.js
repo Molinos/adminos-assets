@@ -1,11 +1,11 @@
-$(document).ready(function () {
+$(() => {
   $(document).on('click', 'div.list-item', function (e) {
     e.stopPropagation();
     $(this).siblings('ul.list__list').slideToggle();
     $(this).find('.list-item__more-arrow').toggleClass('arrow-rotate');
   });
 
-  $(document).on('click', '.list-item *', function (e) {
+  $(document).on('click', '.list-item *', (e) => {
     e.stopPropagation();
   });
 
@@ -13,14 +13,12 @@ $(document).ready(function () {
     if ($(element).siblings('ul').length) {
       $(element).siblings('ul').addClass('list__list');
       if (!$(element).children('.list-item__more-arrow').length) {
-        $(element).append('<svg class="list-item__more-arrow arrow-rotate" xmlns="http://www.w3.org/2000/svg" width="10" height="6">' +
-            '<path fill="#191919" d="M1.2 0L0 1.1 5 6l5-4.9L8.8 0 5 3.7 1.2 0z"/></svg>');
+        $(element).append('<svg class="list-item__more-arrow arrow-rotate" xmlns="http://www.w3.org/2000/svg" width="10" height="6">'
+            + '<path fill="#191919" d="M1.2 0L0 1.1 5 6l5-4.9L8.8 0 5 3.7 1.2 0z"/></svg>');
       }
-    } else {
-      if ($(element).children('.list-item__more-arrow').length) {
-        const arrow = $(element).children('.list-item__more-arrow');
-        $(arrow).remove();
-      }
+    } else if ($(element).children('.list-item__more-arrow').length) {
+      const arrow = $(element).children('.list-item__more-arrow');
+      $(arrow).remove();
     }
   }
 
@@ -28,8 +26,8 @@ $(document).ready(function () {
     addArrow($(this));
   });
 
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function () {
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(() => {
       $('div.list-item').each(function () {
         addArrow($(this));
       });
@@ -41,8 +39,8 @@ $(document).ready(function () {
   function addObserverIfDesiredNodeAvailable() {
     const tree = $('ul.ui-sortable')[0];
     if (!tree) {
-      //The node we need does not exist yet.
-      //Wait 500ms and try again
+      // The node we need does not exist yet.
+      // Wait 500ms and try again
       window.setTimeout(addObserverIfDesiredNodeAvailable, 500);
 
       return;

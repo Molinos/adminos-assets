@@ -1,5 +1,5 @@
 @import "~select2/src/scss/core";
-@import "select2-bootstrap-theme/dist/select2-bootstrap.min.css";
+@import "~select2-bootstrap-5-theme/src/select2-bootstrap-5-theme";
 @import "~cropperjs/src/css/cropper.scss";
 @import "~bootstrap-datepicker/dist/css/bootstrap-datepicker";
 
@@ -165,7 +165,6 @@
     .select2-search__field {
       height: auto;
       margin: 0;
-      padding: 0.25em 0.5rem;
     }
   }
 
@@ -180,9 +179,7 @@
       .select2-search__field {
         height: auto;
         margin: 0;
-        padding: 0.5rem;
         font-size: 1rem;
-        line-height: 1.25;
       }
     }
 
@@ -194,13 +191,6 @@
       line-height: 1.2;
       background-color: transparent;
       border-color: #ccc;
-
-      span {
-        display: block;
-        position: absolute;
-        left: 5px;
-        top: 3px;
-      }
     }
 
     .select2-selection__clear {
