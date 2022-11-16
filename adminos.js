@@ -9,6 +9,7 @@ import 'jquery-autosize/jquery.autosize';
 import 'optiscroll/dist/optiscroll.min';
 import './src/js/filters';
 import './src/js/tree_roll-up';
+import './src/js/multicheckbox';
 
 import 'jquery-ui/ui/widgets/sortable';
 import 'nestedSortable';
