@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 import './src/js/railsujs';
 import './src/js/utils';
-import 'actiontext';
+import '@rails/actiontext';
 import 'bootstrap';
 import 'jquery-autosize/jquery.autosize';
 
