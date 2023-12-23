@@ -3125,10 +3125,10 @@ quick-lru@^4.0.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
-rails-ujs@^5.2.7:
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.7.tgz#b6ef09b26f6e195d48d0e797d3380aedd8bca6d4"
-  integrity sha512-Rk9kMVU5Sgup0no2f+2YoFou9F4ZIgQ1s0t4zOwi0RLmllD8DIUxXMH04wT5l+BHuH6qSfmANSw9EdqB/tkABA==
+rails-ujs@^5.2.8-1:
+  version "5.2.8-1"
+  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.8-1.tgz#2ef0bb092b910121cf19d1464365f5bdcc730701"
+  integrity sha512-1Xfgv21r3Ira7sgepnvLD546q8hm/uIokK7Ocoi4uLsXkT0HHg8vJaxKfBqbjdb24YeOGBily+jxfcAle7dMWA==
 
 react-is@^16.13.1:
   version "16.13.1"
