@@ -16,7 +16,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@rails/actiontext": "^7.1.2",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.2.3",
     "bootstrap-datepicker": "^1.10.0",
     "cropperjs": "^1.5.12",
     "jquery": "^3.3.1",
