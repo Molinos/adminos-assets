@@ -15,11 +15,12 @@
   }
 
   &__placeholder, .placeholder {
-    //min-height: 34px;
+    min-height: unset;
     margin: 0 0 10px;
     padding: 0;
     border: 1px dashed #4183c4;
     border-radius: 4px;
+    background-color: unset;
 
     &.mjs-nestedSortable-error {
       border-color: #ddd;
