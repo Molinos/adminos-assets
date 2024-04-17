@@ -1,12 +1,20 @@
 $(() => {
   $(document).on('click', 'div.list-item', function (e) {
-    e.stopPropagation();
-    $(this).siblings('ul.list__list').slideToggle();
-    $(this).find('.list-item__more-arrow').toggleClass('arrow-rotate');
+    const el = $(this).find('.list-item__more-arrow');
+
+    if (el.length !== 0) {
+      e.stopPropagation();
+      $(this).siblings('ul.list__list').slideToggle();
+      el.toggleClass('arrow-rotate');
+    }
   });
 
   $(document).on('click', '.list-item *', (e) => {
-    e.stopPropagation();
+    const el = $(this).find('.list-item__more-arrow');
+
+    if (el.length !== 0) {
+      e.stopPropagation();
+    }
   });
 
   function addArrow(element) {
